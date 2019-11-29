@@ -8,7 +8,7 @@ require_once('../include/traffic/traffic.php');
 
 // Check if admin logged
 if ($admin->adminLogged == true) {
-	header('location: ' . $GLOBALS['URL'] . '/control_panel/');
+	header('location: ' . $GLOBALS['URL'] . DASHBOARD_URL);
 	exit();
 }
 
@@ -22,6 +22,7 @@ $message = '';
 $postUsername= '';
 $postPassword = '';
 $postCheckbox = '';
+//$loginCheck = ''; // I HAVE ADDED THIS LINE
 
 /*$p = cryptPassword('123456');
 echo $p;
@@ -44,12 +45,11 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
 		// Admin log in
 		$loginCheck = adminLogin($postUsername, $postPassword);
 	
-	} else {
 	// Check log in status
 	if($loginCheck['status'] == true) {
 		
-		/*echo 'success';
-		exit();*/
+		echo 'success';
+		exit();
 		
 		// Update admin log
 		adminUpdateLog($loginCheck['ID'], $_SERVER['REMOTE_ADDR']);
