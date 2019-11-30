@@ -31,8 +31,9 @@ exit();
 
 // Log in
 if(isset($_POST['username']) && isset($_POST['password'])) {
+	$LOGIN_URL = 'http://localhost/PHP_CART/control_panel/login.php';
 	// Check URL
-	if($_SERVER['HTTP_REFERER'] == LOGIN_URL) {
+	if($_SERVER['HTTP_REFERER'] == $LOGIN_URL) {
 		// Get values
 		$postUsername = filterUsername($_POST['username']);
 		$postPassword = cryptPassword($_POST['password']);
