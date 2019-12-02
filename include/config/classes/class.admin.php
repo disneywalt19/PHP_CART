@@ -152,7 +152,7 @@ class Admin {
 				$this->added = $rowLoadAdmin['adminAdded'];
 				
 				
-				if ($this->$status == '1') {
+				if ($this->status == '1') {  
 						// Valid logged
 						$this->adminLogged = true;
 					}
